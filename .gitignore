@@ -10,7 +10,6 @@
 **/dist
 **/.tmp
 **/lib/vendors
-**/src/main/webapp
 .tern-project
 src/main/resources/rebel.xml
 nb-configuration.xml
