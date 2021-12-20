@@ -1,0 +1,15 @@
+LOGIN TERMINAL
+heroku login
+
+CRIAR PROJETO
+heroku create projeto-jsp-tadeu
+
+retorno - (https://projeto-jsp-tadeu.herokuapp.com/ | https://git.heroku.com/projeto-jsp-tadeu.git)
+
+CRIAR BANCO
+heroku addons:create heroku-postgresql:hobby-dev --app projeto-jsp-tadeu
+
+OBTER URL DO BANCO
+heroku config --app projeto-jsp-tadeu
+
+heroku git:remote -a projeto-jsp-tadeu

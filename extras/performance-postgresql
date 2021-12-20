@@ -1,0 +1,7 @@
+C:\Program Files\PostgreSQL\11\data\postgresql.conf
+
+max_connections = 4000
+shared_buffers = 4000MB
+work_mem = 100MB
+maintenance_work_mem = 100MB
+max_stack_depth = 1MB

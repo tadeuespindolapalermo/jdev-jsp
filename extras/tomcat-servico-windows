@@ -1,0 +1,18 @@
+Executar no terminal:
+
+Adicionar servciço
+
+\bin\service.bat install
+
+\bin\tomcat10w.exe
+ - General (aba)
+   - Startup type: Automatic
+   - Start   
+ - Java (aba)
+   - Initial memory pool: 800
+   - Maximum memory pool: 1200
+ - Aplicar  
+ 
+ Remover serviço:
+ 
+ \bin\service.bat remove
