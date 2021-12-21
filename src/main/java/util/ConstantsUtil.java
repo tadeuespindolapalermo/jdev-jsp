@@ -15,5 +15,7 @@ public class ConstantsUtil {
 	public static final String TOTAL_PAGINA = "totalPagina";
 	public static final String YYYY_MM_DD = "yyyy-mm-dd";
 	public static final String DD_MM_YYYY = "dd/mm/yyyy";
+	public static final String DATA_INICIAL= "dataInicial";
+	public static final String DATA_FINAL = "dataFinal";
 
 }

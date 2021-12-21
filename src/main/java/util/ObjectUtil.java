@@ -3,10 +3,8 @@ package util;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
-import java.io.IOException;
 import java.util.Map;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,10 +30,13 @@ public class ObjectUtil {
 		return !isObjectsValid(objects);
 	}
 	
-	public static void redirect(HttpServletRequest request, HttpServletResponse response, String path, Map<String, Object> attributes)
-			throws ServletException, IOException {
-		attributes.entrySet().forEach(att -> request.setAttribute(att.getKey(), att.getValue()));		
-		request.getRequestDispatcher(path).forward(request, response);
+	public static void redirect(HttpServletRequest request, HttpServletResponse response, String path, Map<String, Object> attributes) {
+		try {
+			attributes.entrySet().forEach(att -> request.setAttribute(att.getKey(), att.getValue()));		
+			request.getRequestDispatcher(path).forward(request, response);	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

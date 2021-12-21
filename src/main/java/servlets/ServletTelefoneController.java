@@ -28,8 +28,8 @@ public class ServletTelefoneController extends ServletGenericUtil {
 
 	private static final long serialVersionUID = 1L;
 
-	private DAOUsuarioRepository daoUsuarioRepository = new DAOUsuarioRepository();
-	private DAOTelefoneRepository daoTelefoneRepository = new DAOTelefoneRepository();
+	private final DAOUsuarioRepository daoUsuarioRepository = new DAOUsuarioRepository();
+	private final DAOTelefoneRepository daoTelefoneRepository = new DAOTelefoneRepository();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

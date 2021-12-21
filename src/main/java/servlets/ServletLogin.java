@@ -27,25 +27,27 @@ public class ServletLogin extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    	String acao = request.getParameter(ACAO);
-    	
-    	if (isObjectValid(acao) && acao.equalsIgnoreCase("logout")) {
-    		request.getSession().invalidate();
-    		redirect(request, response, "/index.jsp", Map.of());
-    	} else {
-    		doPost(request, response);
-    	}
+    	try {
+    		String acao = request.getParameter(ACAO);
+        	if (isObjectValid(acao) && acao.equalsIgnoreCase("logout")) {
+        		request.getSession().invalidate();
+        		redirect(request, response, "/index.jsp", Map.of());
+        	} else {
+        		doPost(request, response);
+        	}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    	String login = request.getParameter("login");
-    	String senha = request.getParameter("senha");
-    	String url = request.getParameter("url");
-    	
     	try {
+    		
+    		String login = request.getParameter("login");
+        	String senha = request.getParameter("senha");
+        	String url = request.getParameter("url");
+        	
     		if (isObjectsValid(login, senha)) {
         		var modelLogin = new ModelLogin(login, senha);    		
         		if (daoLoginRepository.validarAutenticacao(modelLogin)) {
