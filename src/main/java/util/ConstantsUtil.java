@@ -13,5 +13,7 @@ public class ConstantsUtil {
 	public static final String USUARIO = "usuario";
 	public static final String TELEFONES = "telefones";
 	public static final String TOTAL_PAGINA = "totalPagina";
+	public static final String YYYY_MM_DD = "yyyy-mm-dd";
+	public static final String DD_MM_YYYY = "dd/mm/yyyy";
 
 }

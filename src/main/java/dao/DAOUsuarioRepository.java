@@ -1,6 +1,8 @@
 package dao;
 
 import static java.util.Objects.nonNull;
+import static util.ConstantsUtil.DD_MM_YYYY;
+import static util.ConstantsUtil.YYYY_MM_DD;
 import static util.ObjectUtil.isObjectValid;
 
 import java.io.Serializable;
@@ -35,8 +37,8 @@ public class DAOUsuarioRepository implements Serializable {
 		try (var statement = connection.prepareStatement(sql)) {
 			statement.setLong(1, (Long) parametros[0]);
 			if (parametros.length > 1) {
-				statement.setDate(2, Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse((String) parametros[1]))));
-				statement.setDate(3, Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse((String) parametros[2]))));
+				statement.setDate(2, Date.valueOf(new SimpleDateFormat(YYYY_MM_DD).format(new SimpleDateFormat(DD_MM_YYYY).parse((String) parametros[1]))));
+				statement.setDate(3, Date.valueOf(new SimpleDateFormat(YYYY_MM_DD).format(new SimpleDateFormat(DD_MM_YYYY).parse((String) parametros[2]))));
 			}
 			var result = statement.executeQuery();
 			
@@ -169,8 +171,8 @@ public class DAOUsuarioRepository implements Serializable {
 				if (parametros[0] instanceof Long parameter) statement.setLong(1, parameter);
 				if (parametros.length > 1 && parametros[1] instanceof Long parameter) statement.setLong(2, parameter);
 				if (renderPeriodo) {
-					statement.setDate(2, Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse((String) parametros[1]))));
-					statement.setDate(3, Date.valueOf(new SimpleDateFormat("yyyy-mm-dd").format(new SimpleDateFormat("dd/mm/yyyy").parse((String) parametros[2]))));
+					statement.setDate(2, Date.valueOf(new SimpleDateFormat(YYYY_MM_DD).format(new SimpleDateFormat(DD_MM_YYYY).parse((String) parametros[1]))));
+					statement.setDate(3, Date.valueOf(new SimpleDateFormat(YYYY_MM_DD).format(new SimpleDateFormat(DD_MM_YYYY).parse((String) parametros[2]))));
 				}
 			}
 			var resultado = statement.executeQuery();
